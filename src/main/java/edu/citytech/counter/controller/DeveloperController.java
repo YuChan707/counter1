@@ -18,8 +18,8 @@ public class DeveloperController {
     @Produces(MediaType.APPLICATION_JSON)
     public Object detailDeveloper() {   
 
-        String name = "Chen, Yuzhen ";
-        String[] skills = {"SQL","Java", "HTML" , "Javascript"};
+        String name = "Chen, Yuzhen";
+        String[] skills = {"SQL","Java", "HTML" , "Javascript", "CSS", "Python", "Comunication", "Teamwork", "Problem Solving", "Passion to LEARN"};
         var developer = new Developer(name,skills, 20);
         return developer;
     }
