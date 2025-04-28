@@ -6,8 +6,7 @@ import io.micronaut.http.annotation.Get;
 import io.micronaut.http.annotation.Produces;
 
 import java.util.Date;
-
-import edu.citytech.counter.dto.Developer;
+import dto.Developer; // Ensure this import is correct based on your project structure
 @Controller()
 public class DeveloperController {
     @Get()
@@ -17,7 +16,8 @@ public class DeveloperController {
     
     @Get(uri = "developer")
     @Produces(MediaType.APPLICATION_JSON)
-    public Object detailDeveloper() {         
+    public Object detailDeveloper() {   
+
         String name = "Chen, Yuzhen ";
         String[] skills = {"SQL","Java", "HTML" , "Javascript"};
         var developer = new Developer(name,skills, 20);
