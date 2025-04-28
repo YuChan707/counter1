@@ -7,6 +7,12 @@ public class Developer {
     private String[] skills;
     private int yearsOfExperience;
 
+    public Developer(String name, String[] skills, int yearsOfExperience) {
+        this.name = name;
+        this.skills = skills;
+        this.yearsOfExperience = yearsOfExperience;
+    }
+
     public String getName() {
         return name;
     }
@@ -23,11 +29,6 @@ public class Developer {
         return yearsOfExperience;
     }
     public void setYearsOfExperience(int yearsOfExperience) {
-        this.yearsOfExperience = yearsOfExperience;
-    }
-    public Developer(String name, String[] skills, int yearsOfExperience) {
-        this.name = name;
-        this.skills = skills;
         this.yearsOfExperience = yearsOfExperience;
     }
 }
