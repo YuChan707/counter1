@@ -12,4 +12,21 @@ public class ABC_Controller {
     public Object ABC_wow() { 
         return new ABC_Services().get_abc() ;
     }
+
+    @Get(uri = "v")
+    public Object DisplayVowelL() { 
+        return new ABC_Services().getVowelsLower();
+    }
+
+    
+    @Get(uri = "V")
+    public Object DisplayVowelU() { 
+        return new ABC_Services().getVowelsUper();
+    }
+
+    
+    @Get(uri = "A")
+    public Object DisplayABC() { 
+        return new ABC_Services().get_ABC();
+    }
 }
