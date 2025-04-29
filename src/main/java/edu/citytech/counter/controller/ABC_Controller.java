@@ -11,6 +11,11 @@ public class ABC_Controller {
 
     @Inject ABC_Services services;
 
+    @Get(value = "/letters/{mode}")
+    public Object getData(String mode) { 
+        return services.getData(mode);
+    }
+
     @Get(uri="a")
     public Object ABC_wow() { 
         return services.get_abc() ;
