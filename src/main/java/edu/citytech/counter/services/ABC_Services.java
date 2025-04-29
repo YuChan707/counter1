@@ -81,7 +81,7 @@ public class ABC_Services {
         var vowels = new ArrayList<String>();
         
         for (String l : letters) {
-            if (isVowel(l)) {
+            if (!isVowel(l)) {
                 vowels.add(l);
             }
         }
