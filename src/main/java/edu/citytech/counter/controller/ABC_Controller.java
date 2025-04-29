@@ -27,6 +27,17 @@ public class ABC_Controller {
         return services.getVowelsUpper();
     }
 
+    @Get(uri = "c")
+    public Object DisplayConsonantL() { 
+        return services.getConsonantLower();
+    }
+
+    
+    @Get(uri = "C")
+    public Object DisplayConsonantU() { 
+        return services.getConsonantUpper();
+    }
+
     
     @Get(uri = "A")
     public Object DisplayABC() { 

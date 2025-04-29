@@ -64,4 +64,28 @@ public class ABC_Services {
         return vowels;
     }
 
+    public List<String> getConsonantLower() {
+        var letters = Arrays.asList(alphabet);
+        var vowels = new ArrayList<String>();
+        
+        for (String l : letters) {
+            if (!isVowel(l)) {
+                vowels.add(l);
+            }
+        }
+        return vowels;
+    }
+
+    public List<String> getConsonantUpper() {
+        var letters = Arrays.asList(ALPHABET);
+        var vowels = new ArrayList<String>();
+        
+        for (String l : letters) {
+            if (isVowel(l)) {
+                vowels.add(l);
+            }
+        }
+        return vowels;
+    }
+
 }
