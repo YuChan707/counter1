@@ -4,29 +4,32 @@ package edu.citytech.counter.controller;
 import edu.citytech.counter.services.ABC_Services;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
+import jakarta.inject.Inject;
 
 @Controller("/abc")
 public class ABC_Controller {
 
-    @Get()
+    @Inject ABC_Services services;
+
+    @Get(uri="a")
     public Object ABC_wow() { 
-        return new ABC_Services().get_abc() ;
+        return services.get_abc() ;
     }
 
     @Get(uri = "v")
     public Object DisplayVowelL() { 
-        return new ABC_Services().getVowelsLower();
+        return services.getVowelsLower();
     }
 
     
     @Get(uri = "V")
     public Object DisplayVowelU() { 
-        return new ABC_Services().getVowelsUper();
+        return services.getVowelsUpper();
     }
 
     
     @Get(uri = "A")
     public Object DisplayABC() { 
-        return new ABC_Services().get_ABC();
+        return services.get_ABC();
     }
 }
