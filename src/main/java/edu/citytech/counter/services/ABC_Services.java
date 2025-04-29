@@ -26,9 +26,14 @@ public class ABC_Services {
         map.put("A",this::get_ABC);
     }
 
-    public List<String> getData(String keyWord){
+    public Object getData(String keyWord){
         List<String> data = map.get(keyWord).get();
-        return data;
+
+        Map<String, Object> mapResult = new HashMap<>();
+        mapResult.put("size", data.size());
+        mapResult.put("data", data);
+        mapResult.put("developver", " - YUZHEN CHEN -");
+        return mapResult;
     }
 
     private static final String ABC = "abcdefghijklmnopqrstuvwxyz";
