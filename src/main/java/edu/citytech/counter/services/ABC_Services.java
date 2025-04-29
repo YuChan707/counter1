@@ -3,16 +3,34 @@ package edu.citytech.counter.services;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Supplier;
 
 import jakarta.inject.Singleton;
 
 @Singleton
 // @Singleton is a Micronaut annotation that indicates that this class is a singleton bean.
 public class ABC_Services {
-    public ABC_Services() {
-        System.out.println("I am alaive, and today is "+ new Date());
+    //start t use Map
+    Map<String, Supplier<List<String>>> map = new HashMap<>();
+
+    public ABC_Services(){
+        System.out.println("I am alive, and today is "+ new Date());
+        map.put("v",this::getVowelsLower);
+        map.put("V",this::getVowelsUpper);
+        map.put("c",this::getConsonantLower);
+        map.put("C",this::getConsonantUpper);
+        map.put("a",this::get_abc);
+        map.put("A",this::get_ABC);
     }
+
+    public List<String> getData(String keyWord){
+        List<String> data = map.get(keyWord).get();
+        return data;
+    }
+
     private static final String ABC = "abcdefghijklmnopqrstuvwxyz";
 
     private static final String[] alphabet = ABC.split("");
