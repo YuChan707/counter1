@@ -9,15 +9,19 @@ import edu.citytech.counter.dto.EnergyStock;
 
 //BestEnergyStocks2024-10-25.xlsx
 public class EnergyStockService {
-    private static String DIR = "CST_3612_DATA";
+    private static String DIR = System.getenv("CST_3613_DATA");
     private static List<EnergyStock> list = new ArrayList<>();
 
     static {
-		String fileName = DIR + "BestEnergyStocks2024-10-25.xlsx";		
+		String fileName = DIR + "/BestEnergyStocks2024-10-25.xlsx";		
 		int sheetNumber = 0, skip = 1;	
 		
 		var repository = new ExcelRepository<EnergyStock>(fileName, sheetNumber, skip);				
 		repository.findAll(EnergyStock.class, list::add);
+
+        for (EnergyStock stock : list) {
+            System.out.println(stock.toString());
+        }   
 	
 	}
     public int size(){

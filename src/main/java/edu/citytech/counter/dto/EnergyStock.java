@@ -82,6 +82,10 @@ public class EnergyStock {
         return marketCap;
     }
 
+    public float getMarketCapInMillions() {
+        return marketCap / 1_000_000_000;
+    }
+
     public void setMarketCap(float marketCap) {
         this.marketCap = marketCap;
     }
@@ -132,6 +136,25 @@ public class EnergyStock {
 
     public void setePSRev(String ePSRev) {
         this.ePSRev = ePSRev;
+    }
+
+    /*
+     * @Override
+     * public String toString() {
+     * return "EnergyStock [rank=" + rank + ", symbol=" + symbol + ", companyName="
+     * + companyName + ", quantRating="
+     * + quantRating + ", sAAnalystRatings=" + sAAnalystRatings +
+     * ", wallStreetRatings=" + wallStreetRatings
+     * + ", marketCapInBillion=" + getMarketCapInMillions() + ", divYield=" +
+     * divYield + ", valuation=" + valuation + ", growth="
+     * + growth + ", profitability=" + profitability + ", momentum=" + momentum +
+     * ", ePSRev=" + ePSRev
+     * + "]";
+     * }
+     */
+    @Override
+    public String toString() {
+        return "EnergyStock [rank=" + rank + ", symbol=" + symbol + ", quantRating=" + quantRating  + ", marketCapInBillion=" + getMarketCapInMillions() + ", divYield=" + divYield + "]";
     }
 
 }

@@ -16,5 +16,6 @@ public class T2_EnergyStocks {
         int Expected = 232;
 
         assertEquals(Expected, Actual);
+        
     }
 }
