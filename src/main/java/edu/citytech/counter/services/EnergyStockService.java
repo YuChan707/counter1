@@ -27,4 +27,22 @@ public class EnergyStockService {
     public int size(){
         return list.size();
     }
+    public List<EnergyStock> getDividendStocks() {
+        List<EnergyStock> divList = new ArrayList<>();
+        for (EnergyStock stock : list) {
+            if (stock.getDivYield() > 0) {
+                divList.add(stock);
+            }
+        }
+        return divList;
+    }
+    public List<EnergyStock> getMarketCapInMillions() {
+        List<EnergyStock> getMarketCapInMillions = new ArrayList<>();
+        for (EnergyStock stock : list) {
+            if (stock.getMarketCap() > 100_000_000) {
+                getMarketCapInMillions.add(stock);
+            }
+        }
+        return getMarketCapInMillions;
+    }
 }
