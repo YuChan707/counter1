@@ -1,4 +1,4 @@
-package dto;
+package edu.citytech.counter.dto;
 import io.micronaut.serde.annotation.SerdeImport;
 
 @SerdeImport
