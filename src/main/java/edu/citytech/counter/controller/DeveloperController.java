@@ -6,7 +6,8 @@ import io.micronaut.http.annotation.Get;
 import io.micronaut.http.annotation.Produces;
 
 import java.util.Date;
-import dto.Developer; // Ensure this import is correct based on your project structure
+
+import edu.citytech.counter.dto.Developer;
 @Controller()
 public class DeveloperController {
     @Get()
