@@ -37,12 +37,12 @@ public class EnergyStockService {
         return divList;
     }
     public List<EnergyStock> getMarketCapInMillions() {
-        List<EnergyStock> getMarketCapInMillions = new ArrayList<>();
-        for (EnergyStock stock : list) {
-            if (stock.getMarketCap() > 100_000_000) {
-                getMarketCapInMillions.add(stock);
+        List<EnergyStock> billClub = new ArrayList<>();
+        for (EnergyStock energyStock : list) {
+            if (energyStock.getMarketCapInMillions() >= 1) {
+                billClub.add(energyStock);
             }
         }
-        return getMarketCapInMillions;
+        return billClub;
     }
 }
