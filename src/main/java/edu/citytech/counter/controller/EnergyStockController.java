@@ -14,7 +14,7 @@ public class EnergyStockController {
     @Inject
     EnergyStockService services;
 
-    @Get(value = "/all")
+    @Get(value = "/all-Test")
     public Object getAll(){
 
         Map<String, Object> map = new HashMap<>();
@@ -31,6 +31,7 @@ public class EnergyStockController {
         var data = services.getDividendStocks();
         map.put("data", data);
         map.put("size", data.size());
+        System.out.println("Developver : Yuzhen Chen");
         
         return map;
     }

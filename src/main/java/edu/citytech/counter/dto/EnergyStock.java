@@ -1,5 +1,6 @@
 package edu.citytech.counter.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.learning.java.data.annotation.Column;
 
 import io.micronaut.serde.annotation.SerdeImport;
@@ -82,6 +83,7 @@ public class EnergyStock {
         this.wallStreetRatings = wallStreetRatings;
     }
 
+    @JsonIgnore
     public float getMarketCap() {
         return marketCap;
     }
