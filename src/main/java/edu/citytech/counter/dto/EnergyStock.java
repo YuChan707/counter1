@@ -2,6 +2,10 @@ package edu.citytech.counter.dto;
 
 import com.learning.java.data.annotation.Column;
 
+import io.micronaut.serde.annotation.SerdeImport;
+
+//adding the @SerdeImport annotation to the class makes it a serializable bean in Micronaut
+@SerdeImport
 public class EnergyStock {
     @Column(index = "0")
     private int rank;
