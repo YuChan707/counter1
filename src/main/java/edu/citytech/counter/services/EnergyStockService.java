@@ -6,7 +6,10 @@ import java.util.List;
 import com.learning.java.data.repository.ExcelRepository;
 
 import edu.citytech.counter.dto.EnergyStock;
+import jakarta.inject.Singleton;
 
+//adding the @Singleton annotation to the class makes it a singleton bean in Micronaut
+@Singleton
 //BestEnergyStocks2024-10-25.xlsx
 public class EnergyStockService {
     private static String DIR = System.getenv("CST_3613_DATA");
