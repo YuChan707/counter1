@@ -40,6 +40,8 @@ public class T2_EnergyStocks {
         List<EnergyStock> list = services.getMarketCapInMillions();
         int Actual = list.size();
         int Expected = 150;
+        list.forEach(System.out::println);
+        System.out.println("Market Cap in Millions: " + Actual);
         assertEquals(Expected, Actual);
         
     }
