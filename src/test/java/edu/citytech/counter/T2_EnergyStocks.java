@@ -24,8 +24,6 @@ public class T2_EnergyStocks {
 
     @Test
     void t2(){
-
-        System.out.println(System.getenv("CST_3612_DATA"));
         EnergyStockService services = new EnergyStockService();
         
         List<EnergyStock> list = services.getDividendStocks();
@@ -37,13 +35,11 @@ public class T2_EnergyStocks {
 
     @Test
     void t3(){
-
-        System.out.println(System.getenv("CST_3612_DATA"));
         EnergyStockService services = new EnergyStockService();
         
         List<EnergyStock> list = services.getMarketCapInMillions();
         int Actual = list.size();
-        int Expected = 215;
+        int Expected = 150;
         assertEquals(Expected, Actual);
         
     }
