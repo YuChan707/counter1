@@ -31,7 +31,7 @@ public class EnergyStockController {
         var data = services.getDividendStocks();
         map.put("data", data);
         map.put("size", data.size());
-        System.out.println("Developver : Yuzhen Chen");
+        System.out.println("Developver : ");
         
         return map;
     }
