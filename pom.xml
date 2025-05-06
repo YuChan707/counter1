@@ -135,5 +135,6 @@
         </configuration>
       </plugin>
     </plugins>
+    <finalName>counter</finalName>
   </build>
 </project>
