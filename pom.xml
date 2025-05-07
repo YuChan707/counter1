@@ -135,5 +135,6 @@
         </configuration>
       </plugin>
     </plugins>
+    <finalName>counter-yuzhen</finalName>
   </build>
 </project>
