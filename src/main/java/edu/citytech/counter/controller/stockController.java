@@ -32,6 +32,7 @@ public class stockController {
         var data = type.equals("dividends") ? services.getDividendStocks() : services.getAll();
         map.put("data", data);
         map.put("size", data.size());  
+        System.out.println("Developer: Yuzhen Chen" );
         return map;
     }
 
@@ -45,4 +46,5 @@ public class stockController {
         
         return map;
     }
+    
 }

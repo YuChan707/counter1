@@ -28,7 +28,7 @@ public class stockService {
 		//String fileName = DIR + "/BestEnergyStocks2024-10-25.xlsx";		
         //String fileName = DIR + "/" + files[1] + ".xlsx";	
 		int sheetNumber = 0, skip = 1;	
-		
+		//YUZHEN CHEN
 		//var repository = new ExcelRepository<stock>(fileName, sheetNumber, skip);				
 		//repository.findAll(stock.class, list::add);
         //for (String afile : file){} sfile is category and categories is file
@@ -64,9 +64,11 @@ public class stockService {
         }
         return billClub;
     }
+
     public List<stock> getAll() {
         return list;
     }
+
     public List<stock> filter(int code) {
 
         List<stock> filteredList = new ArrayList<>();
@@ -75,10 +77,12 @@ public class stockService {
             boolean display = (category.code() & code)> 0;
             if(display) {
                 //System.out.println("Category: " + category.category());
-                var newList = list.stream().filter(e -> e.getCategory().equals(e.getCategory())).toList();
+                var newList = list.stream()
+                                  .filter(e -> e.getCategory().equals(category.category()))
+                                  .toList();
                 filteredList.addAll(newList);
             }
         }
-        return list;
+        return filteredList;
     }
 }
