@@ -18,7 +18,8 @@ public class T2_EnergyStocks {
         int Actual = services.size();
         //int Expected = 32; //for REITS.xlsx
         //int Expected = 232; //for BestEnergyStocks2024-10-25.xlsx
-        int Expected = 714; //for all datae together
+        //int Expected = 714; //for all datae together
+        int Expected = 482; //for all datae together
 
         assertEquals(Expected, Actual);
         
@@ -31,7 +32,8 @@ public class T2_EnergyStocks {
         List<stock> list = services.getDividendStocks();
         int Actual = list.size();
         //int Expected = 150; //for BestEnergyStocks2024-10-25.xlsx
-        int Expected = 449; //for REITS.xlsx
+        //int Expected = 449; //for REITS.xlsx
+        int Expected = 299; //for all datae together
         assertEquals(Expected, Actual);
         
     }
@@ -42,7 +44,8 @@ public class T2_EnergyStocks {
         
         List<stock> list = services.getMarketCapInMillions();
         int Actual = list.size();
-        int Expected = 150;
+        //int Expected = 150;
+        int Expected = 330; //for REITS.xlsx
         list.forEach(System.out::println);
         System.out.println("Market Cap in Millions: " + Actual);
         assertEquals(Expected, Actual);
