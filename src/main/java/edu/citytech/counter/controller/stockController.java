@@ -24,11 +24,12 @@ public class stockController {
         return map;
     }
 
-    @Get(value = "/dividends")
-    public Object getAllDividens(){
+    //@Get(value = "/dividends")
+    @Get(value = "/{type}")
+    public Object getAllDividens(String type){
 
         Map<String, Object> map = new HashMap<>();
-        var data = services.getDividendStocks();
+        var data = type.equals("dividends") ? services.getDividendStocks() : services.getAll();
         map.put("data", data);
         map.put("size", data.size());
         System.out.println("Developver : ");

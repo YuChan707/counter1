@@ -20,7 +20,7 @@ public class stockService {
         String[] files = { 
             "Energy", "REITS","ConsumerStaples", "Gaming"
         };//"BestEnergyStocks2024-10-25"
-        
+
 		//String fileName = DIR + "/BestEnergyStocks2024-10-25.xlsx";		
         //String fileName = DIR + "/" + files[1] + ".xlsx";	
 		int sheetNumber = 0, skip = 1;	
@@ -58,5 +58,9 @@ public class stockService {
             }
         }
         return billClub;
+    }
+    public List<stock> getAll() {
+        
+        return list;
     }
 }
