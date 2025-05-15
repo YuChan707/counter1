@@ -31,8 +31,17 @@ public class stockController {
         Map<String, Object> map = new HashMap<>();
         var data = type.equals("dividends") ? services.getDividendStocks() : services.getAll();
         map.put("data", data);
+        map.put("size", data.size());  
+        return map;
+    }
+
+    @Get(value = "/code/{code}")
+    public Object getByCode(int code){
+
+        Map<String, Object> map = new HashMap<>();
+        var data = services.filter(code);
+        map.put("data", data);
         map.put("size", data.size());
-        System.out.println("Developver : ");
         
         return map;
     }

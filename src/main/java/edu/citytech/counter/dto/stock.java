@@ -168,4 +168,8 @@ public class stock {
                     + ", category=" + category + "]";
     }
 
+    public String getCategory() {
+        return category;
+    }
+
 }
