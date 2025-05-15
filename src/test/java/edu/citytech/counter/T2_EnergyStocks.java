@@ -16,7 +16,9 @@ public class T2_EnergyStocks {
         stockService services = new stockService();
         
         int Actual = services.size();
-        int Expected = 232;
+        //int Expected = 32; //for REITS.xlsx
+        //int Expected = 232; //for BestEnergyStocks2024-10-25.xlsx
+        int Expected = 714; //for all datae together
 
         assertEquals(Expected, Actual);
         
@@ -28,7 +30,8 @@ public class T2_EnergyStocks {
         
         List<stock> list = services.getDividendStocks();
         int Actual = list.size();
-        int Expected = 150;
+        //int Expected = 150; //for BestEnergyStocks2024-10-25.xlsx
+        int Expected = 449; //for REITS.xlsx
         assertEquals(Expected, Actual);
         
     }

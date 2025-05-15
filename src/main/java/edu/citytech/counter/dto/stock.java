@@ -34,6 +34,8 @@ public class stock {
     private String momentum;
     @Column(index = "12")
     private String ePSRev;
+    @Column(index = "13")
+    private String category;
 
     public int getRank() {
         return rank;
@@ -160,7 +162,10 @@ public class stock {
      */
     @Override
     public String toString() {
-        return "EnergyStock [rank=" + rank + ", symbol=" + symbol + ", quantRating=" + quantRating  + ", marketCapInBillion=" + getMarketCapInMillions() + ", divYield=" + divYield + "]";
+        return "stock [rank =" + rank + ", symbol =" + symbol 
+                    + ", quantRating =" + quantRating  
+                    + ", marketCapInBillion =" + getMarketCapInMillions() + ", divYield =" + divYield 
+                    + ", category=" + category + "]";
     }
 
 }

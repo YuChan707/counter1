@@ -16,12 +16,23 @@ public class stockService {
     private static List<stock> list = new ArrayList<>();
 
     static {
-		String fileName = DIR + "/BestEnergyStocks2024-10-25.xlsx";		
+        //take 3 xlsx files
+        String[] files = { 
+            "Energy", "REITS","ConsumerStaples", "Gaming"
+        };//"BestEnergyStocks2024-10-25"
+        
+		//String fileName = DIR + "/BestEnergyStocks2024-10-25.xlsx";		
+        //String fileName = DIR + "/" + files[1] + ".xlsx";	
 		int sheetNumber = 0, skip = 1;	
 		
-		var repository = new ExcelRepository<stock>(fileName, sheetNumber, skip);				
-		repository.findAll(stock.class, list::add);
+		//var repository = new ExcelRepository<stock>(fileName, sheetNumber, skip);				
+		//repository.findAll(stock.class, list::add);
 
+        for (String aFile : files) {
+            String fileName = DIR + "/" + aFile + ".xlsx";
+            var repository = new ExcelRepository<stock>(fileName, sheetNumber, skip);				
+            repository.findAll(stock.class, list::add);
+        }
         for (stock stock : list) {
             System.out.println(stock.toString());
         }   
