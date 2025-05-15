@@ -7,7 +7,7 @@ import io.micronaut.serde.annotation.SerdeImport;
 
 //adding the @SerdeImport annotation to the class makes it a serializable bean in Micronaut
 @SerdeImport
-public class EnergyStock {
+public class stock {
     @Column(index = "0")
     private int rank;
     @Column(index = "1")

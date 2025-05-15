@@ -5,15 +5,15 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
-import edu.citytech.counter.dto.EnergyStock;
-import edu.citytech.counter.services.EnergyStockService;
+import edu.citytech.counter.dto.stock;
+import edu.citytech.counter.services.stockService;
 
 public class T2_EnergyStocks {
     @Test
     void t1(){
 
         System.out.println(System.getenv("CST_3612_DATA"));
-        EnergyStockService services = new EnergyStockService();
+        stockService services = new stockService();
         
         int Actual = services.size();
         int Expected = 232;
@@ -24,9 +24,9 @@ public class T2_EnergyStocks {
 
     @Test
     void t2(){
-        EnergyStockService services = new EnergyStockService();
+        stockService services = new stockService();
         
-        List<EnergyStock> list = services.getDividendStocks();
+        List<stock> list = services.getDividendStocks();
         int Actual = list.size();
         int Expected = 150;
         assertEquals(Expected, Actual);
@@ -35,9 +35,9 @@ public class T2_EnergyStocks {
 
     @Test
     void t3(){
-        EnergyStockService services = new EnergyStockService();
+        stockService services = new stockService();
         
-        List<EnergyStock> list = services.getMarketCapInMillions();
+        List<stock> list = services.getMarketCapInMillions();
         int Actual = list.size();
         int Expected = 150;
         list.forEach(System.out::println);
