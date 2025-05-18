@@ -46,5 +46,16 @@ public class stockController {
         
         return map;
     }
+
+    @Get(value = "/reits")
+    public Object getAllReits(String type){
+
+        Map<String, Object> map = new HashMap<>();
+        var data = type.equals("dividends") ? services.getDividendStocks() : services.getAll();
+        map.put("data", data);
+        map.put("size", data.size());
+        
+        return map;
+    }
     
 }
