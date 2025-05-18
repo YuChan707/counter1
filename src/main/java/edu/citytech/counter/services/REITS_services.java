@@ -26,5 +26,11 @@ public class REITS_services {
         return list;
     }
     
+    public List<REITS> findOne(String symbol) {
+        List<REITS> list = new ArrayList<>();
+        final Bson find = new Document("symbol", symbol);
+        DB_Utility.query(REITS.class, list::add, databaseName, collection, projection, find, sort);
+        return list;
+    }
 
 }

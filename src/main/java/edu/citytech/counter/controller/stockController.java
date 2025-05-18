@@ -63,5 +63,17 @@ public class stockController {
         
         return map;
     }
+
+    @Get(value = "/reits/{symbol}")
+    public Object getOneReits(String symbol){
+
+        Map<String, Object> map = new HashMap<>();
+        var data = reits_services.findOne(symbol);
+        map.put("REITS_data", data);
+        map.put("size", data.size());
+        //map.put("Developver", "Yuzhen Chen");
+        
+        return map;
+    }
     
 }
