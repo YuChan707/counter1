@@ -1,9 +1,8 @@
 package edu.citytech.counter.dto;
-
 import io.micronaut.serde.annotation.SerdeImport;
 
 @SerdeImport
-public class REITS {
+public class ETFS {
     private int rank;
     private String symbol;
     private float marketCapInBillions;

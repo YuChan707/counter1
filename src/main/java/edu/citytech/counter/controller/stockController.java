@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import edu.citytech.counter.dto.REITS;
 import edu.citytech.counter.services.REITS_services;
 import edu.citytech.counter.services.stockService;
 import io.micronaut.http.annotation.Controller;
@@ -25,6 +24,7 @@ public class stockController {
         Map<String, Object> map = new HashMap<>();
         map.put("data", new ArrayList<>());
         map.put("size", 0);
+        map.put("Developver", "Yuzhen Chen");
 
         return map;
     }
@@ -37,6 +37,7 @@ public class stockController {
         var data = type.equals("dividends") ? services.getDividendStocks() : services.getAll();
         map.put("data", data);
         map.put("size", data.size());  
+        map.put("Developver", "Yuzhen Chen");
         System.out.println("Developer: Yuzhen Chen" );
         return map;
     }
@@ -59,7 +60,7 @@ public class stockController {
         var data = reits_services.findAll();
         map.put("REITS_data", data);
         map.put("size", data.size());
-        //map.put("Developver", "Yuzhen Chen");
+        map.put("Developver", "Yuzhen Chen");
         
         return map;
     }
@@ -71,7 +72,30 @@ public class stockController {
         var data = reits_services.findOne(symbol);
         map.put("REITS_data", data);
         map.put("size", data.size());
-        //map.put("Developver", "Yuzhen Chen");
+        map.put("Developver", "Yuzhen Chen");
+        
+        return map;
+    }
+    
+    @Get(value = "/etfs")
+    public Object getEtfsAll(){
+
+        Map<String, Object> map = new HashMap<>();
+        var data = reits_services.findAll();
+        map.put("REITS_data", data);
+        map.put("size", data.size());
+        map.put("Developver", "Yuzhen Chen");
+        
+        return map;
+    }
+        @Get(value = "/etfs/{symbol}")
+    public Object getOneEtfs(String symbol){
+
+        Map<String, Object> map = new HashMap<>();
+        var data = reits_services.findOne(symbol);
+        map.put("REITS_data", data);
+        map.put("size", data.size());
+        map.put("Developver", "Yuzhen Chen");
         
         return map;
     }
