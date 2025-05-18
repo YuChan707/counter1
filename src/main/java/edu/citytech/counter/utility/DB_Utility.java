@@ -12,7 +12,7 @@ import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 
-public class BD_Utility {
+public class DB_Utility {
     	private static final GsonBuilder builder = new GsonBuilder();
 	private static final Gson gson = builder.create();
 	private static final MongoClient mongoClient;
