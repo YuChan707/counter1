@@ -13,7 +13,7 @@ public class ETFS {
     private String yieldFwd;
     private String payOutDate;
     private String gpaETFDividends;
-    private float expenseRatio;;
+    private float expenseRatio;
 
     public int getRank() {
         return rank;
