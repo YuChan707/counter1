@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import edu.citytech.counter.dto.ETFS;
+import edu.citytech.counter.services.ETFS_services;
 import edu.citytech.counter.services.REITS_services;
 import edu.citytech.counter.services.stockService;
 import io.micronaut.http.annotation.Controller;
@@ -17,6 +19,9 @@ public class stockController {
 
     @Inject
     REITS_services reits_services;
+    
+    @Inject
+    ETFS_services etfs_services;
 
     @Get(value = "/all-Test")
     public Object getAll(){
@@ -81,19 +86,19 @@ public class stockController {
     public Object getEtfsAll(){
 
         Map<String, Object> map = new HashMap<>();
-        var data = reits_services.findAll();
-        map.put("REITS_data", data);
+        var data = etfs_services.findAll();
+        map.put("ETFs_data", data);
         map.put("size", data.size());
         map.put("Developver", "Yuzhen Chen");
         
         return map;
     }
-        @Get(value = "/etfs/{symbol}")
+    @Get(value = "/etfs/{symbol}")
     public Object getOneEtfs(String symbol){
 
         Map<String, Object> map = new HashMap<>();
-        var data = reits_services.findOne(symbol);
-        map.put("REITS_data", data);
+        var data = etfs_services.findOne(symbol);
+        map.put("ETFs_data", data);
         map.put("size", data.size());
         map.put("Developver", "Yuzhen Chen");
         
